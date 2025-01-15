@@ -1,0 +1,6 @@
+@Mayuukha.Server_HostAddress = http://localhost:5235
+
+GET {{Mayuukha.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
