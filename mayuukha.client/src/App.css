@@ -1,0 +1,40 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+th, td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.img-fluid {
+    width: 300px; /* Adjust to your desired size */
+    height: 300px; /* Adjust to your desired size */
+    object-fit: contain; /* Ensures aspect ratio stays intact */
+}
+
+/* HeadingArea.css */
+.heading-area {
+    text-align: center;
+    padding: 3rem 1rem;
+    border-radius: 1rem;
+    font-family: "Dancing Script", cursive; /* Elegant font choice */
+}
+
+.heading-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    margin: 0;
+    text-transform: capitalize;
+}

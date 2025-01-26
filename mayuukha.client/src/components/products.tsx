@@ -8,18 +8,19 @@ interface ImageData {
     uri: string;
 }
 
-interface Props {
-    containername: string;
-    foldername: string;
+interface ProductsProps {
+    containername?: string;
+    foldername?: string;
 }
 
-function Products({ containername, foldername }: Props) {
+function Products({ containername, foldername }: ProductsProps) {
     const [images, setImages] = useState<ImageData[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         const fetchImages = async () => {
             try {
+                setLoading(true);
                 const apiurl = format("https://localhost:32769/api/BlobStorage/containerName/folderName?containerName={0}&folderName={1}/", containername, foldername);
                 const response = await axios.get(apiurl, { responseType: "json", });
 
@@ -44,10 +45,21 @@ function Products({ containername, foldername }: Props) {
     }, [containername, foldername]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className="loading-container">
+            <img src="/src/assets/images/loading-new.gif" className="img-fluid" />
+        </div>;
     }
 
-    return (
+    return <>
+        {
+            foldername === "" ? (<div></div >) : (
+                <div className="heading-area">
+                    <h1 className="heading-title">{foldername?.replace(/-/g, " ")}</h1>
+                </div >
+            )
+
+        }
+
         <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center" }}>
             {images.map((image, index) => (
                 <motion.div
@@ -71,7 +83,8 @@ function Products({ containername, foldername }: Props) {
                 </motion.div>
             ))}
         </div>
-    );
+    </>
+
 };
 
 export default Products;
