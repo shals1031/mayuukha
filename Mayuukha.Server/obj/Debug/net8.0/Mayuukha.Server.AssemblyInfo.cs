@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mayuukha.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41a4de0b58698ee19fd3e22b2620f736ed54b1e4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0063f9aa8745b05694f5dd0dd32aa73b72dc4970")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mayuukha.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mayuukha.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
