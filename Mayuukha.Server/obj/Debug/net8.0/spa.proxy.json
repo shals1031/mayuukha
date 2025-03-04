@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:5173",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "D:\\ShaleenWork\\Mayuukha\\Code\\Mayuukha.Server\\..\\mayuukha.client",
+"WorkingDirectory": "D:\\ShaleenWork\\Mayuukha\\Code\\Mayuukha.Server\\..\\mayuukha.client\\dist",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

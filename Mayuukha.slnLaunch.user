@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Dev Profile",
+    "Projects": [
+      {
+        "Path": "Mayuukha.Server\\Mayuukha.Server.csproj",
+        "Action": "Start",
+        "DebugTarget": "Container (Dockerfile)"
+      },
+      {
+        "Path": "mayuukha.client\\mayuukha.client.esproj",
+        "Action": "Start",
+        "DebugTarget": "localhost (Chrome)"
+      }
+    ]
+  }
+]

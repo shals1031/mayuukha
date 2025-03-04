@@ -1,5 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -12,15 +14,14 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", policy =>
     {
-        policy.WithOrigins("https://localhost:5173") // Replace with your frontend URL
+        policy.WithOrigins("https://localhost:5173") // Localhost frontend URL
               .AllowAnyHeader()
               .AllowAnyMethod();
+        policy.WithOrigins("https://www.mayuukha.in") // Domain name URL
+                       .AllowAnyHeader()
+                       .AllowAnyMethod();
     });
 });
-
-
-
-
 
 var app = builder.Build();
 app.UseCors("AllowSpecificOrigin"); // Add this line
@@ -43,5 +44,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.MapFallbackToFile("/index.html");
+
 
 app.Run();

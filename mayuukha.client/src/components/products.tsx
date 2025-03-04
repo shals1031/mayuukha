@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { format } from 'react-string-format'
+import configData from '../config.json'
 
 interface ImageData {
     name: string;
@@ -9,8 +10,8 @@ interface ImageData {
 }
 
 interface ProductsProps {
-    containername?: string;
-    foldername?: string;
+    containername: string;
+    foldername: string;
 }
 
 function Products({ containername, foldername }: ProductsProps) {
@@ -21,7 +22,7 @@ function Products({ containername, foldername }: ProductsProps) {
         const fetchImages = async () => {
             try {
                 setLoading(true);
-                const apiurl = format("https://localhost:32769/api/BlobStorage/containerName/folderName?containerName={0}&folderName={1}/", containername, foldername);
+                const apiurl = format("{0}/api/BlobStorage/containerName/folderName?containerName={1}&folderName={2}/", configData.API_BASE_URL, containername, foldername);
                 const response = await axios.get(apiurl, { responseType: "json", });
 
                 // Assuming the response is containing Base64 or Blob data
@@ -46,7 +47,7 @@ function Products({ containername, foldername }: ProductsProps) {
 
     if (loading) {
         return <div className="loading-container">
-            <img src="/src/assets/images/loading-new.gif" className="img-fluid" />
+            <img src="./assets/images/loading-new.gif" className="img-fluid" />
         </div>;
     }
 

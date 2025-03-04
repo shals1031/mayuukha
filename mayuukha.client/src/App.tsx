@@ -1,9 +1,9 @@
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import UniNavbar from './components/uninavbar';
 import Home from './components/home';  // Your Home component
-import './index.css'
-import 'bootstrap/dist/css/bootstrap.css'
 import Products from './components/products';
 
 
