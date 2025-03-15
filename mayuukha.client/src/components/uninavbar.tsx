@@ -31,7 +31,7 @@ function UniNavbar() {
 
             <Navbar fixed="top" expand="lg" className="bg-body-tertiary" data-bs-theme="light" bg="primary">
                 <Container>
-                    <Navbar.Brand> <img alt="" onClick={() => handleNavClick("/", "Home", {})} src="./assets/images/logo.webp" width="30" height="30" className="d-inline-block align-top" />{'  '}Mayuukha</Navbar.Brand>
+                    <Navbar.Brand> <img alt="" onClick={() => handleNavClick("/", "", {})} src="./assets/images/logo.webp" width="30" height="30" className="d-inline-block align-top" />{'  '}Mayuukha</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto" data-bs-theme="light">

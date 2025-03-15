@@ -9,6 +9,7 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="index.html" />
     <None Remove="public\assets\images\bgimage.jpg" />
     <None Remove="public\assets\images\loading-new.gif" />
     <None Remove="public\assets\images\logo.jpg" />
@@ -23,13 +24,13 @@
     <Folder Include="src\assets\styles\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptConfiguration Include="index.html" />
     <TypeScriptConfiguration Include="public\assets\images\bgimage.jpg" />
     <TypeScriptConfiguration Include="public\assets\images\loading-new.gif" />
-    <TypeScriptConfiguration Include="public\assets\images\logo.jpg" />
-    <TypeScriptConfiguration Include="public\assets\images\Logo.webp" />
+    <TypeScriptConfiguration Include="public\assets\images\logo.webp" />
+    <TypeScriptConfiguration Include="public\index.html" />
     <TypeScriptConfiguration Include="src\assets\images\bgimage.jpg" />
     <TypeScriptConfiguration Include="src\assets\images\loading-new.gif" />
-    <TypeScriptConfiguration Include="src\assets\images\logo.jpg" />
-    <TypeScriptConfiguration Include="src\assets\images\Logo.webp" />
+    <TypeScriptConfiguration Include="src\assets\images\logo.webp" />
   </ItemGroup>
 </Project>
