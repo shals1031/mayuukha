@@ -7,5 +7,6 @@ namespace Mayuukha.Server.Models
         public string? Name { get; set; }
         public Uri? Uri { get; set; }
         public string? BlobData { get; set; }
+        public IDictionary<string, string>? Metadata { get; set; }
     }
 }

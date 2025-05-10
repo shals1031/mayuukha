@@ -50,7 +50,14 @@ namespace Mayuukha.Server.Controllers
                     else
                     {
                         BlobClient blobClient = containerClient.GetBlobClient(blobHierarchyItem?.Blob.Name);
-                        files.Add(new ImageDetails { Name = blobClient.Name, Uri = blobClient.Uri, BlobData = await DownloadBlobImage(blobClient) });
+                        files.Add(new ImageDetails
+                        {
+                            Name = blobClient.Name,
+                            Uri = blobClient.Uri,
+                            BlobData = await DownloadBlobImage(blobClient),
+                            Metadata = ((BlobProperties)blobClient.GetProperties()).Metadata
+
+                        });
                     }
                 }
                 return files;
@@ -71,14 +78,29 @@ namespace Mayuukha.Server.Controllers
         /// <param name="blobName"></param>
         /// <returns></returns>
         [HttpGet("containerName/blobName")]
-        public async Task<string> GetImageByName(string containerName, string blobName)
+        public async Task<ImageDetails> GetImageByName(string containerName, string blobName)
         {
             try
             {
                 var containerClient = blobServiceClient.GetBlobContainerClient(containerName);
                 BlobClient blobClient = containerClient.GetBlobClient(blobName);
+                BlobProperties properties = await blobClient.GetPropertiesAsync();
+                //properties.Metadata.
 
-                return await DownloadBlobImage(blobClient);
+
+                foreach (var metadataItem in properties.Metadata)
+                {
+                    Console.WriteLine($"\tKey: {metadataItem.Key}");
+                    Console.WriteLine($"\tValue: {metadataItem.Value}");
+                }
+                return new ImageDetails
+                {
+                    Name = blobClient.Name,
+                    Uri = blobClient.Uri,
+                    BlobData = await DownloadBlobImage(blobClient),
+                    //Metadata = properties.Value.Metadata // Add this line
+                };
+
 
             }
             catch (Exception ex)
